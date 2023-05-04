@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <title>Upload Photo</title>
+    <style>
+        h2 {
+        text-align: center;
+        }
+        .inner {
+         width: 400px;
+            height: auto;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+<h2>Upload your photo</h2>
+<div class="inner">
+<form th:action="@{/upload}" method="post" enctype="multipart/form-data">
+    <input type="file" name="file" required/>
+    <br/>
+    <button class="btn btn-primary" type="submit">Submit</button>
+</form>
+</div>
+</body>
+</html>

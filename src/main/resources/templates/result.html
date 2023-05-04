@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <title>Photo Result</title>
+    <style>
+        h2 {
+        text-align: center;
+        }
+        .inner {
+         width: 300px;
+            height: auto;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            font-size: 18px;
+        }
+        p {
+        text-align: center;
+        }
+    </style>
+</head>
+<body>
+<h2>Your uploaded photo:</h2>
+<div class="inner">
+    <img class="image" th:src="${photoUrl}" width="200" height="200" />
+    <p th:text="'Photo name: ' + ${photoName}" />
+
+    <p>
+        <a class="btn btn-primary" th:href="@{/download(photoUrl=${photoUrl},photoName=${photoName})}">Download as PNG</a>
+    </p>
+</div>
+
+
+</body>
+</html>
